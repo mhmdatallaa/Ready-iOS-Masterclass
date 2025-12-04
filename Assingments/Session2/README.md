@@ -27,7 +27,7 @@ print(counter())  // 2
 print(counter())  // 3
 ```
 
---
+-------------------
 ### Why use a Set instead of Array for finding common elements?, AND What are the performance implications?
 
 
@@ -75,7 +75,7 @@ let commonSet = Set(array1).intersection(array2)       // O(n + m)
 •    For large datasets, Set operations can be orders of magnitude faster
     
 
---
+-------------------
 
 ### Why is Set faster for lookups?
 
@@ -85,7 +85,7 @@ let commonSet = Set(array1).intersection(array2)       // O(n + m)
     
 •    Array must check each element one by one → O(n) time.
 
---
+-------------------
 
 ### When would you choose Array over Set despite performance?
 
