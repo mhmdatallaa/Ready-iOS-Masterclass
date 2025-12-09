@@ -24,7 +24,7 @@ class HomeViewController: UITableViewController {
         super.viewDidLoad()
         let nib = UINib(nibName: "ProductCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "productCell")
-        
+        title = "Products"
         Task {
             await viewModel.getAllProducts()
             let products = viewModel.products
@@ -38,7 +38,7 @@ class HomeViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
+        180
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,4 +57,12 @@ class HomeViewController: UITableViewController {
         return cell
     }
     
+}
+
+
+extension HomeViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productDetailsViewController = ProductDetailsViewController(product: products[indexPath.row])
+        navigationController?.pushViewController(productDetailsViewController, animated: true)
+    }
 }

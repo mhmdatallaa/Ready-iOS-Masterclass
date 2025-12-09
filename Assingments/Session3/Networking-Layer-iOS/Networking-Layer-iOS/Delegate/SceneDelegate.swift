@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let client = URLSessionNetworkClient()
         let service = FakeStoreService(client: client)
         let viewModel = HomeViewModel(serivce: service)
-        let homeViewController = HomeViewController(viewModel: viewModel)
+        let homeViewController =
+        UINavigationController(rootViewController: HomeViewController(viewModel: viewModel))
         window?.rootViewController = homeViewController
         
         window?.makeKeyAndVisible()
